@@ -1,36 +1,40 @@
 # Privacy Policy for Cermonix
 
-**Effective Date:** July 7, 2026
+**Effective Date:** August 5, 2026  
+**Extension Version:** 1.0.0
 
 ## 1. Information We Collect
-Cermonix ("the Extension") collects and processes the following information strictly to provide its core functionality (AI-assisted coding guidance):
+Cermonix ("the Extension") collects and processes the following information strictly to provide its core functionality (AI-assisted DSA guidance and direct GitHub solution syncing):
 
-*   **API Key:** The Extension requires a Google Gemini API key provided by the user.
-*   **Website Content:** When active on LeetCode (`leetcode.com/problems/*`), the Extension reads the problem description, your current code editor contents, and submission results.
-*   **Chat History:** The messages you send to the AI coach are temporarily kept in memory for the duration of the session to maintain conversation context.
+* **AI Service Credentials (Optional):** The user may provide a Google Gemini API key to activate the AI Coach feature.
+* **GitHub Personal Access Token (Optional):** The user may provide a GitHub Fine-Grained Personal Access Token (PAT) to enable one-click solution pushing to their GitHub repositories.
+* **Coding Platform Context:** When active on supported competitive programming and problem-solving websites (LeetCode, GeeksforGeeks, Codeforces, and AtCoder), the Extension extracts the problem title, problem statement, current editor code, language, and submission/verdict status.
+* **Chat Conversation History:** The messages exchanged with the AI Coach are temporarily held in local memory during your active session to maintain Socratic dialog context.
 
 ## 2. How We Use the Information
-The collected information is used exclusively for the following purpose:
-*   To send prompts to the Google Gemini API (`generativelanguage.googleapis.com`) to generate relevant hints, feedback, and algorithmic explanations for the specific coding problem you are working on.
+Collected data is used strictly for:
+* Sending prompts and problem context directly to the Google Gemini API (`generativelanguage.googleapis.com`) to generate Socratic hints, edge-case analysis, and code debugging without spoiling solutions.
+* Interacting directly with the official GitHub API (`api.github.com`) to list repositories, folders, create files, and commit solutions selected by the user.
 
 **We do NOT:**
-*   Use your data for any other unrelated purposes.
-*   Use your data for creditworthiness or lending purposes.
-*   Sell your data to any third parties.
+* Sell, rent, or trade your data to any third parties.
+* Use your data for advertising, marketing, analytics, profiling, or credit scoring.
+* Collect any personal identifying information, browsing history outside supported problem pages, or passwords.
 
-## 3. Data Storage and Transmission
-*   **Local Storage:** Your Gemini API key is stored securely and locally on your device using Chrome's extension storage mechanism. It is never transmitted to any servers owned by the Extension's developers.
-*   **Transmission:** When you request a hint or chat with the AI, your API key, the LeetCode problem context (description, code, submission status), and your chat messages are transmitted **directly and securely via HTTPS to Google's Gemini API**.
-*   We do not maintain servers, databases, or analytics backends that intercept, log, or store your data.
+## 3. Data Storage and Security
+* **Local Storage:** All API keys, GitHub tokens, and preferences are stored exclusively on your device using Chrome's secure storage APIs (`chrome.storage.sync` / `chrome.storage.local`). GitHub tokens are encrypted locally with Web Crypto (AES-GCM 256-bit).
+* **Direct HTTPS Communication:**
+  - AI requests travel directly from your browser to Google's Gemini servers via HTTPS.
+  - GitHub sync operations travel directly from your browser to GitHub's REST API via HTTPS.
+* **Zero Backend / Zero Middleman:** We operate no intermediate proxy servers, cloud databases, or tracking services. No developer or third party intercepts your code or tokens.
 
 ## 4. Third-Party Services
-The Extension relies on the Google Gemini API to function. By using this Extension, you acknowledge that your prompts (including code and problem context) are sent to Google. Please review [Google's Privacy Policy](https://policies.google.com/privacy) and [Google Generative AI Terms of Service](https://policies.google.com/terms/generative-ai) to understand how Google handles the data sent via their API.
+* **Google Gemini API:** When using the AI Coach, your prompt context is processed under [Google's Privacy Policy](https://policies.google.com/privacy) and [Google Generative AI Terms of Service](https://policies.google.com/terms/generative-ai).
+* **GitHub API:** When using GitHub Sync, repository operations are handled under [GitHub's Privacy Statement](https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement).
 
-## 5. User Consent
-By installing and using the Extension, and by providing your API key in the extension settings, you consent to the collection, local storage, and transmission of data to Google's Gemini API as described in this policy.
+## 5. User Control & Data Deletion
+You retain full control of your credentials at all times:
+* You can modify or permanently delete your Gemini API key or disconnect your GitHub token at any moment from the in-app settings or the Options page. Deleting credentials purges them immediately from local browser storage.
 
-## 6. Changes to this Privacy Policy
-We may update this Privacy Policy from time to time. Any changes will be reflected with a new "Effective Date" at the top of this document.
-
-## 7. Contact
-If you have any questions or concerns regarding this Privacy Policy, please contact the developer via the support links provided on the Chrome Web Store listing.
+## 6. Contact & Open Source
+For questions, feedback, or privacy inquiries regarding Cermonix, please contact the developer via the official Chrome Web Store support listing or GitHub repository.
